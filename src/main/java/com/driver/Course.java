@@ -1,7 +1,7 @@
 package com.driver;
 
 public class Course {
-	private String courseId;
+    private String courseId;
     private String courseName;
     private int maxCapacity;
     private int enrolledStudents;
@@ -14,30 +14,31 @@ public class Course {
     }
 
     public String getCourseId() {
-    	// your code goes here
         return courseId;
     }
 
     public String getCourseName() {
-    	// your code goes here
         return courseName;
     }
 
     public int getMaxCapacity() {
-    	// your code goes here
         return maxCapacity;
     }
 
     public int getEnrolledStudents() {
-    	// your code goes here
         return enrolledStudents;
     }
 
     public void enrollStudent() throws CourseAlreadyFullException {
-       // your code goes here
+        if (enrolledStudents >= maxCapacity) {
+            throw new CourseAlreadyFullException("Course is already full!");
+        }
+        enrolledStudents++;
     }
 
     public void dropStudent() {
-       // your code goes here
+        if (enrolledStudents > 0) {
+            enrolledStudents--;
+        }
     }
 }

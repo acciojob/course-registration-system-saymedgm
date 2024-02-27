@@ -1,8 +1,7 @@
 package com.driver;
 
 public class CourseNotFoundException extends Exception {
-	public CourseNotFoundException(String message) {
-		//your code goes here
+    public CourseNotFoundException(String message) {
         super(message);
     }
 }
